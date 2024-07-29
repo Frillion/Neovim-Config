@@ -63,9 +63,6 @@ vim.opt.scrolloff = 10
 --  See `:help vim.keymap.set()`
 vim.keymap.set("n","<leader>nh", "<cmd>nohlsearch<CR>")
 
--- Diagnostic keymaps
-vim.keymap.set("n","<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
 -- [[ Navigation Keymaps ]]
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set("n","<left>", '<cmd>echo "Use h to move!!"<CR>')
@@ -76,6 +73,8 @@ vim.keymap.set("n","<C-d>", "<C-d>zz", { desc = "Jumps one page down and centers
 vim.keymap.set("n","<C-u>", "<C-u>zz", { desc = "Jumps one page up and centers the cursor"})
 vim.keymap.set("n","n","nzz")
 vim.keymap.set("n","N","Nzz")
+vim.keymap.set("n","<leader>qn","<cmd>cnext<cr>")
+vim.keymap.set("n","<leader>qp","<cmd>cprev<cr>")
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
