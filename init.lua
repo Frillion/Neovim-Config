@@ -74,6 +74,8 @@ vim.keymap.set("n","<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n","<down>", '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set("n","<C-d>", "<C-d>zz", { desc = "Jumps one page down and centers the cursor"})
 vim.keymap.set("n","<C-u>", "<C-u>zz", { desc = "Jumps one page up and centers the cursor"})
+vim.keymap.set("n","n","nzz")
+vim.keymap.set("n","N","Nzz")
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -113,7 +115,7 @@ if not vim.uv.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ import = "Frillion.plugins" })
+require("lazy").setup({
+	"tpope/vim-fugitive",
+	import = "Frillion.plugins"})
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
