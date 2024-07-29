@@ -29,11 +29,18 @@ return {
         telescope.load_extension("fzf")
 
         local keymap = vim.keymap
+	local builtin = require("telescope.builtin")
 
-        keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", {desc = "Fuzzy find files in cwd"})
-        keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", {desc = "Fuzzy find recently worked on files"})
-        keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", {desc = "Find string in cwd"})
-        keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", {desc = "Find string under cursor in cwd"})
-        keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", {desc = "Find all files with todo's"})
+	keymap.set("n", "<leader>pg", builtin.git_files, {desc = "Fuzzy find only files that are tracked by git"})
+        keymap.set("n", "<leader>pf", builtin.find_files, {desc = "Fuzzy find files in cwd"})
+	keymap.set("n", "<leader>fh", builtin.help_tags, {desc = "Fuzzy find help pages"})
+        keymap.set("n", "<leader>psw", function()
+			local word = vim.fn.expand("<cword>")
+			builtin.grep_string({search = word})
+		end, {desc = "Find (w)word under cursor in cwd"})
+        keymap.set("n", "<leader>psW", function()
+			local word = vim.fn.expand("<cWORD>")
+			builtin.grep_string({search = word})
+		end, {desc = "Find (W)word under cursor in cwd"})
     end,
 }
