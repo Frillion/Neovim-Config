@@ -67,6 +67,13 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 vim.keymap.set("n","<leader>nh", "<cmd>nohlsearch<CR>")
+vim.keymap.set("i", "<C-c>", "<ESC>")
+
+-- [[ Editing Keymaps ]]
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K",":m '<-2<CR>gv=gv")
+vim.keymap.set("x", "<leader>pa", "\"_dP")
+
 
 -- [[ Navigation Keymaps ]]
 -- TIP: Disable arrow keys in normal mode
@@ -76,8 +83,8 @@ vim.keymap.set("n","<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n","<down>", '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set("n","<C-d>", "<C-d>zz", { desc = "Jumps one page down and centers the cursor"})
 vim.keymap.set("n","<C-u>", "<C-u>zz", { desc = "Jumps one page up and centers the cursor"})
-vim.keymap.set("n","n","nzz")
-vim.keymap.set("n","N","Nzz")
+vim.keymap.set("n","n","nzzzv")
+vim.keymap.set("n","N","Nzzzv")
 vim.keymap.set("n","<leader>qn","<cmd>cnext<cr>")
 vim.keymap.set("n","<leader>qp","<cmd>cprev<cr>")
 

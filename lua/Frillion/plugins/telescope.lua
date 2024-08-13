@@ -28,11 +28,11 @@ return {
 
         telescope.load_extension("fzf")
 
-        local keymap = vim.keymap
+    local keymap = vim.keymap
 	local builtin = require("telescope.builtin")
 
 	keymap.set("n", "<leader>pg", builtin.git_files, {desc = "Fuzzy find only files that are tracked by git"})
-        keymap.set("n", "<leader>pf", builtin.find_files, {desc = "Fuzzy find files in cwd"})
+    keymap.set("n", "<leader>pf", function() builtin.find_files({ hidden=true })end, {desc = "Fuzzy find files in cwd"})
 	keymap.set("n", "<leader>fh", builtin.help_tags, {desc = "Fuzzy find help pages"})
         keymap.set("n", "<leader>psw", function()
 			local word = vim.fn.expand("<cword>")
