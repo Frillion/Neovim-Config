@@ -88,7 +88,6 @@ vim.keymap.set("n","N","Nzzzv")
 vim.keymap.set("n","<leader>qn","<cmd>cnext<cr>")
 vim.keymap.set("n","<leader>qp","<cmd>cprev<cr>")
 vim.keymap.set("n","<C-f>","<cmd>silent !tmux neww tmux_sessionizer_love_ya_prime.sh<cr>")
-
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
