@@ -73,6 +73,7 @@ vim.keymap.set("i", "<C-c>", "<ESC>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K",":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "<leader>pa", "\"_dP")
+vim.keymap.set("n", "<C-x>", "<cmd>!chmod +x %<CR>")
 
 
 -- [[ Navigation Keymaps ]]
@@ -88,6 +89,7 @@ vim.keymap.set("n","N","Nzzzv")
 vim.keymap.set("n","<leader>qn","<cmd>cnext<cr>")
 vim.keymap.set("n","<leader>qp","<cmd>cprev<cr>")
 vim.keymap.set("n","<C-f>","<cmd>silent !tmux neww tmux_sessionizer_love_ya_prime.sh<cr>")
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
