@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.g.have_nerd_font = true 
+vim.g.have_nerd_font = true
 
 -- Relative line numbers
 vim.opt.number = true
@@ -95,8 +95,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-        {import = "Frillion.dependency"},
-        {import = "Frillion.lsp"},
-        {import = "Frillion.plugins"}
-    }
-)
+    {import = "Frillion.dependency"},
+    {import = "Frillion.lsp"},
+    {import = "Frillion.plugins"}
+})
