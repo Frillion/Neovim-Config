@@ -11,19 +11,19 @@ return {
           black = '#080705',
           white = '#FFFFFA',
           light_green = '#A9E190',
-          orange = '#FF9B42',
+          orange = '#EE9B42',
           green = '#72B01D',
         }
 
         local theme = {
           normal = {
             a = { fg = colors.white, bg = colors.black },
-            b = { fg = colors.black, bg = colors.orange },
+            b = { fg = colors.white, bg = colors.light_red },
             c = { fg = colors.black, bg = colors.grey },
             z = { fg = colors.white, bg = colors.black },
           },
           insert = { a = { fg = colors.black, bg = colors.light_green } },
-          visual = { a = { fg = colors.black, bg = colors.orange } },
+          visual = { a = { fg = colors.white, bg = colors.orange } },
           replace = { a = { fg = colors.white, bg = colors.light_red } },
         }
 
