@@ -51,6 +51,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.keymap.set('n', '<leader>nh', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<C-c>' , '<ESC>')
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
