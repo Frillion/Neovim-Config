@@ -36,13 +36,13 @@ return {
 
         vim.keymap.set("n", "<leader>psw", function()
                 local word = vim.fn.expand("<cword>")
-                builtin.grep_string({search = word})
+                builtins.grep_string({search = word})
             end,
             {desc = "Find (w)word under cursor in cwd"})
 
         vim.keymap.set("n", "<leader>psW", function()
                 local word = vim.fn.expand("<cWORD>")
-                builtin.grep_string({search = word})
+                builtins.grep_string({search = word})
             end, 
             {desc = "Find (W)word under cursor in cwd"})
     end
