@@ -57,17 +57,9 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        mason_lspconfig.setup_handlers({
-            function(server_name)
-                lspconfig[server_name].setup({
-                    capabilities = capabilities,
-                })
-            end,
-            ["lua_ls"] = function()
-                -- configure lua server (with special settings)
-                lspconfig["lua_ls"].setup({
-                  capabilities = capabilities,
-                  settings = {
+        vim.lsp.config('lua_ls',{
+                capabilities = capabilities,
+                settings = {
                     Lua = {
                       -- make the language server recognize "vim" global
                       diagnostics = {
@@ -77,9 +69,8 @@ return {
                         callSnippet = "Replace",
                       },
                     },
-                  },
-                })
-            end,
-        })
+                }
+            }
+        )
     end
 }
